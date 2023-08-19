@@ -1,13 +1,13 @@
-import {BaseEntity, Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class GatheringParticipantEntity extends BaseEntity {
-    @PrimaryGeneratedColumn()
-    id: number;
+export class GatheringParticipationEntity extends BaseEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    gatheringId: number;
+  @Column()
+  gatheringId: number;
 
-    @Column()
-    userId: number;
+  @Column()
+  userId: number;
 }

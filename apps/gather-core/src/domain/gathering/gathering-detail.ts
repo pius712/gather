@@ -1,7 +1,4 @@
-import { Host } from './host';
-
-export interface JoiningGathering {
-  host: Host;
+export interface GatheringDetail {
   title: string;
   contents: string;
   gatheringDate: Date;

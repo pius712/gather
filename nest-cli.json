@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/gather/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/gather/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/gather",
+  "projects": {
+    "gather": {
+      "type": "application",
+      "root": "apps/gather",
+      "entryFile": "main",
+      "sourceRoot": "apps/gather/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gather/tsconfig.app.json"
+      }
+    },
+    "gather-core": {
+      "type": "application",
+      "root": "apps/gather-core",
+      "entryFile": "main",
+      "sourceRoot": "apps/gather-core/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gather-core/tsconfig.app.json"
+      }
+    },
+    "storage": {
+      "type": "library",
+      "root": "libs/storage",
+      "entryFile": "index",
+      "sourceRoot": "libs/storage/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/storage/tsconfig.lib.json"
+      }
+    }
+  }
+}

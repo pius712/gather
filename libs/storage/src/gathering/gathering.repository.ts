@@ -10,5 +10,21 @@ export class GatheringRepository {
     private readonly repository: Repository<GatheringEntity>,
   ) {}
 
-  findById(id: number) {}
+  async findById(id: number): Promise<GatheringEntity> {
+    return this.repository
+      .createQueryBuilder('gathering')
+      .where('gathering.id := id', {
+        id,
+      })
+      .getOneOrFail();
+  }
+
+  async findByIdIn(ids: number[]) {
+    return this.repository
+      .createQueryBuilder('gathering')
+      .where('gathering.id := in (:ids)', {
+        ids,
+      })
+      .getMany();
+  }
 }
