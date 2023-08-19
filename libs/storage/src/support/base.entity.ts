@@ -1,4 +1,4 @@
 import { Entity } from 'typeorm';
 
-@Entity
+@Entity()
 export class BaseEntity {}

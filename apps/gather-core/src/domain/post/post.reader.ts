@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
+import { Post } from './post';
 
 @Injectable()
 export class PostReader {
-  async read(): Promise<Post> {}
+  async read(id: number): Promise<Post> {}
 }

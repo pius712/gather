@@ -10,9 +10,9 @@ export class PostController {
     return 'This action returns all cats';
   }
 
-  @Post
+  @Post()
   updatePost() {}
 
-  @Post
+  @Post()
   likePost() {}
 }
