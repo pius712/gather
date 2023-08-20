@@ -10,8 +10,12 @@ export class ProfileRepository {
     private readonly repository: Repository<ProfileEntity>,
   ) {}
 
-  findById(id: number): Promise<ProfileEntity> {
-    return this.repository
+  async save(profileEntity: ProfileEntity) {
+    return await this.repository.save(profileEntity);
+  }
+
+  async findById(id: number): Promise<ProfileEntity> {
+    return await this.repository
       .createQueryBuilder('profile')
       .where('profile.id := id', {
         id,
@@ -35,5 +39,16 @@ export class ProfileRepository {
         userId,
       })
       .getOneOrFail();
+  }
+
+  async update(userId: number, entity: ProfileEntity) {
+    await this.repository
+      .createQueryBuilder()
+      .update()
+      .set({
+        ...entity,
+      })
+      .where('userId :=userId', { userId })
+      .execute();
   }
 }

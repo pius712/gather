@@ -9,7 +9,7 @@ export class ProfileEntity {
   nickname: string;
 
   @Column()
-  userId: string;
+  userId: number;
 
   @Column()
   bio: string;
@@ -19,4 +19,28 @@ export class ProfileEntity {
 
   @Column()
   snsUrl: string;
+
+  @Column()
+  interest: string;
+
+  @Column()
+  privacy: boolean;
+
+  constructor(
+    nickname: string,
+    userId: number,
+    bio: string,
+    thumbNameUrl: string,
+    snsUrl: string,
+    interest: string,
+    privacy: boolean,
+  ) {
+    this.nickname = nickname;
+    this.userId = userId;
+    this.bio = bio;
+    this.thumbNameUrl = thumbNameUrl;
+    this.snsUrl = snsUrl;
+    this.interest = interest;
+    this.privacy = privacy;
+  }
 }

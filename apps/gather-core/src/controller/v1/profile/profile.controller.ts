@@ -1,5 +1,5 @@
 import { Controller, Post } from '@nestjs/common';
-import { ProfileService } from '../../../domain/profile/profile.service';
+import { ProfileService } from '../../../domain/user/profile/profile.service';
 
 @Controller()
 export class ProfileController {
